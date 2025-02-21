@@ -1,0 +1,47 @@
+I've implemented all the methods from LogementBusiness.java as REST endpoints in LogementRessources.java.
+
+
+Here's what each endpoint does:
+
+
+getLogementsByReference: GET endpoint to fetch a single logement by its reference
+
+
+addLogement: POST endpoint to add a new logement
+
+getLogementsByDeleguation: GET endpoint to fetch logements by delegation
+getLogementsListeByref: GET endpoint to fetch logements by reference (returns a list)
+deleteLogement: DELETE endpoint to remove a logement by reference
+updateLogement: PUT endpoint to update an existing logement
+Each endpoint:
+Uses appropriate HTTP methods (GET, POST, PUT, DELETE)
+Includes proper path parameters where needed
+Produces/Consumes JSON
+Returns appropriate HTTP status codes
+Includes CORS header ("Access-Control-Allow-Origin")
+Returns meaningful responses
+You'll need to make sure you have the entities.Logement class imported. The endpoints can be accessed using these paths:
+GET /logement/getByReference/{reference}
+POST /logement/add
+GET /logement/getByDeleguation/{deleguation}
+GET /logement/getByRef/{reference}
+DELETE /logement/delete/{reference}
+PUT /logement/update/{reference}
+
+
+ /* rendez vous */
+
+This implementation includes all the endpoints corresponding to the methods in RendezVousBusiness.java. Here's a breakdown of the endpoints:
+GET /rendezvous/getAll - Get all rendez-vous
+POST /rendezvous/add - Add a new rendez-vous
+GET /rendezvous/getByLogement/{reference} - Get rendez-vous by logement reference
+GET /rendezvous/getById/{id} - Get a specific rendez-vous by ID
+DELETE /rendezvous/delete/{id} - Delete a rendez-vous
+PUT /rendezvous/update/{id} - Update a rendez-vous
+Each endpoint:
+Uses appropriate HTTP methods
+Includes proper path parameters
+Produces/Consumes JSON
+Returns appropriate HTTP status codes
+Includes CORS header
+Returns meaningful responses

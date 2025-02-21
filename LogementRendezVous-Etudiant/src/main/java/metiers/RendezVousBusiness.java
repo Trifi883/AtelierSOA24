@@ -6,14 +6,29 @@ import entities.RendezVous;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class RendezVousBusiness {
     public static List<RendezVous> listeRendezVous;
-    LogementBusiness logementMetier=new LogementBusiness();
-    public RendezVousBusiness() {
-      listeRendezVous = new ArrayList<>();
-    }
+    LogementBusiness logementMetier = new LogementBusiness();
 
+    public RendezVousBusiness() {
+        listeRendezVous = new ArrayList<>();
+        
+        Logement log1 = logementMetier.getLogementsByReference(1);
+        Logement log2 = logementMetier.getLogementsByReference(2);
+        Logement log3 = logementMetier.getLogementsByReference(3);
+
+         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDate = dateFormat.format(new Date());
+
+         listeRendezVous.add(new RendezVous(1, currentDate, "10:00", log1, "23456789"));
+        listeRendezVous.add(new RendezVous(2, currentDate, "14:30", log2, "98765432"));
+        listeRendezVous.add(new RendezVous(3, currentDate, "16:00", log3, "55443322"));
+        listeRendezVous.add(new RendezVous(4, currentDate, "11:30", log1, "11223344"));
+        listeRendezVous.add(new RendezVous(5, currentDate, "15:00", log2, "99887766"));
+    }
 
     public boolean addRendezVous(RendezVous rendezVous){
 
